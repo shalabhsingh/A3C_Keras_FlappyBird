@@ -12,7 +12,7 @@ A3C refers to Asynchronous advantage actor-critic algorithm for deep reinforceme
 
 However because of better exploration by DQN, it generally settles at global minima whereas A3C might settle at a local minima leading to sub-optimal results.
 
-Learning Resources-
+**Learning Resources-**
 
 1. For theoretical and implementation details of how a DQN works, see this blog page- https://yanpanlau.github.io/2016/07/10/FlappyBird-Keras.html
 2. For theoretical and implementation details of how an A3C works, see this blog page- https://jaromiru.com/2017/03/26/lets-make-an-a3c-implementation/
@@ -38,3 +38,11 @@ The best model I have got is still not very good but is able to cross 5 pipes on
 
 # How to Run?
 Clone the repository or download it. To test the pretrained model, run the "test.py" file. To retrain the model from scratch, run the "train_network.py" file and the trained models at different stages will be saved in "saved_models" folder.
+
+# Disclaimer
+This work is based on the following repos and blogs-
+
+1. https://github.com/yenchenlin/DeepLearningFlappyBird
+2. https://github.com/jaara/AI-blog
+3. http://karpathy.github.io/2016/05/31/rl/
+
