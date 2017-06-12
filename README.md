@@ -1,5 +1,32 @@
 # A3C_Keras_FlappyBird
+![](animation.gif)
+
 This repository uses Asynchronous advantage actor-critic algorithm (A3C) to play Flappy Bird using Keras. The details of this algorithm are mentioned in [this paper](https://arxiv.org/pdf/1602.01783.pdf) by Deep Mind.
+
+# What is A3C ?
+A3C refers to Asynchronous advantage actor-critic algorithm for deep reinforcement learning. It was proposed over the famous DQN network for playing atari games, proposed by DeepMind back in 2013. DQN was the first RL algorithm which was able to play games successfully because of which Google bought DeepMind itself. However it had some drawbacks which have been solved by A3C-
+
+* DQN had a very large training time (~ 1 week on a GPU) whereas basic A3C takes 1 day to train on a CPU. (infact training time for Flappy Bird game in this project was just 6 hours !!)
+* DQN used experience replay for getting good convergence which requires a lot of memory. A3C doesn't use experience replay at all.
+* The major objective of DQN is to estimate Q-value for all actions in different environment states possible. As a result in early stages of learning, it tries to learn Q-value for states which won't even be a part of optimal strategy. On the other hand, A3C learns which is the best policy to take at good states at the current point of time becasue of which it is faster.
+
+Learning Resources-
+
+1. For theoretical and implementation details of how a DQN works, see this blog page- https://yanpanlau.github.io/2016/07/10/FlappyBird-Keras.html
+2. For theoretical and implementation details of how a DQN works, see this blog page- https://jaromiru.com/2017/03/26/lets-make-an-a3c-implementation/
+
+# Model Desciption
+The input to the neural network is 84x84 grayscale game frames. The network used a convolutional layer with 16 filters of size 8x8 with stride 4, followed by a convolutional layer with with 32 filters of size 4x4 with stride 2, followed by a fully connected layer with 256 hidden units. All three hidden layers were followed by a rectifier nonlinearity. There are two set of outputs – a softmax output with one output representing the probability of flapping, and a single linear output representing the value function.
+
+The hyperparameters used are-
+* Learning rate = 7e-4 which is decreased by 3.2e-8 (can be tuned better) every update.
+* No. of threads = 16
+* Frames/thread used for each update = 5
+* Reward discount (gamma) = 0.99
+* RMSProp cache decay rate = 0.99
+* Entropy regularization, as suggessted by the paper has not been used. However I beleive that using it, could lead to better performance of the model.
+
+The best model I have got is still not very good but is able to cross 5 pipes in general (i.e. it has developed a good understanding of when to flap and when not to). To train better models, tinkering with above hyperparameters can be beneficial.
 
 # Installation Dependencies
 * Python 3.5
