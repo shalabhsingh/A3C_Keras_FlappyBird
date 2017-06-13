@@ -26,7 +26,7 @@ The hyperparameters used are-
 * Frames/thread used for each update = 5
 * Reward discount (gamma) = 0.99
 * RMSProp cache decay rate = 0.99
-* Entropy regularization, as suggested by the paper has not been used. However I beleive that using it, could lead to better performance of the model.
+* Entropy regularization, as suggested by the paper has not been used. However I believe that using it, could lead to better performance of the model.
 
 The best model I have got is still not very good but is able to cross 5 pipes on average (i.e. it has developed a good understanding of when to flap and when not to). To train better models, tinkering with above hyperparameters can be beneficial.
 
