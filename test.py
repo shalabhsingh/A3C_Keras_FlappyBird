@@ -32,7 +32,7 @@ def preprocess(image):
 	image = image.reshape(1, image.shape[0], image.shape[1], 1)
 	return image
 
-model = load_model("model2", custom_objects={'binarycrossentropy': bce, 'sumofsquares': ss})
+model = load_model("good_models/model2", custom_objects={'binarycrossentropy': bce, 'sumofsquares': ss})
 #You can choose which model to run among model1, model2,... and model5.
 game_state = game.GameState()
 
