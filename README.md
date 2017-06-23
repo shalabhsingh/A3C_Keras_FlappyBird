@@ -45,7 +45,3 @@ This work is based on the following repos and blogs-
 1. https://github.com/yenchenlin/DeepLearningFlappyBird
 2. https://github.com/jaara/AI-blog
 3. http://karpathy.github.io/2016/05/31/rl/
-
-$$
-Q(s,a) = f_{\theta}(s)
-$$
