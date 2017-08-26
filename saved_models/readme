@@ -1,0 +1,5 @@
+The models uploaded in this directory are models saved during training process. For eg. the file "model_updates2000" is the saved model
+after 2000 epochs of training.
+
+So, "model_updates0" is the initial model generated for starting training process and "model_updates9500" is the last model generated 
+during training process, after which training was manually stopped.
